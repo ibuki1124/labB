@@ -95,6 +95,13 @@ p{
     justify-content: space-between;
     align-items: flex-start;
 }
+.main-topc{
+    padding: 10px 20px 20px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .check-form{
     padding: 10px 20px 20px;
     font-size: xx-large;
