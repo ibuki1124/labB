@@ -7,9 +7,10 @@
     <title>災害対策アプリ</title>
 </head>
 <body>
-    <header class="stripe">
-        <div>災害対策アプリ</div>
-        <nav>
+    <header>
+        <img src="C:\xampp\htdocs\labB\アンケートシートのフリー素材.png">
+        <div class="aplication_title">災害対策アプリ</div>
+        <nav class="nav-links">
             <a href="login.html">ログインページへ</a>
             <a href="#mypage">マイページへ</a>
             <a href="#history">過去の結果へ</a>
