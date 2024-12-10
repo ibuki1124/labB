@@ -9,10 +9,10 @@
 <body>
     <header class="stripe">
         <div>災害対策アプリ</div>
-        <nav>
+        <nav class="main-nav">
             <a href="login.php">ログインページへ</a>
             <a href="#mypage">マイページへ</a>
-            <a href="#history">過去の結果へ</a>
+            <a href="pastresults.php">過去の結果へ</a>
         </nav>
     </header>
 
