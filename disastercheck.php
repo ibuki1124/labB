@@ -3,10 +3,9 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>ページタイトル-アプリ名</title>
+        <title>対策チェック-災害対策アプリ</title>
         <meta name="description" content="防災アプリ">
         <meta name="viewport" content="width=device-width, initial-sccale=1">
-
         <!--リセットCSS-->
             <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <!--オリジナルCSS-->
@@ -15,7 +14,7 @@
     <body>
     <div class="cover cover-home">
         <header class="page-header">
-            <h1 class="align-center">アプリ名</h1>
+            <h1 class="align-center">災害対策アプリ</h1>
             <nav>
             <ul class="main-nav">
                 <li><a href="">マイページ</a></li>
@@ -25,7 +24,7 @@
     </div>
         <main class="align-center">
             <div class="main">
-                <h2 class="page-title">災害対策チェック</h2>
+                <h2 class="page-title">対策チェック</h2>
                 <div class="right">
                     <a href="">中断</a>
                 </div>
