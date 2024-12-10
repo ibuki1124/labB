@@ -3,7 +3,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>結果-災害対策アプリ</title>
+        <title>過去の記録-災害対策アプリ</title>
         <meta name="description" content="防災アプリ">
         <meta name="viewport" content="width=device-width, initial-sccale=1">
 
@@ -25,13 +25,10 @@
     </div>
         <main class="align-center">
             <div class="main">
-                <h2 class="page-title">災害対策チェック結果</h2>
-                <p class="">日付</p>
+                <h2 class="page-title">過去の記録</h2>
             </div>
-                <div class="main-topc align-center">
-                    <h1>スコア：〇</h1>
-                </div>
                 <table class="stocktable align-center">
+                    <tr><th></th><th colspan="2">日付</th></tr>
                     <tr><th>対策</th><th>結果</th><th>備考</th></tr>
                     <!--繰り返しで表作成-->
                     <tr><td>対策</td><td>〇×</td><td>期限とか</td></tr>

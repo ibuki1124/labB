@@ -23,7 +23,7 @@ header a:hover {
 
 .stripe {
     background: repeating-linear-gradient(-45deg, #f4f400, #f4f400 5px, #979700 5px, #979700 10px);
-  }
+}
 
 .container {
     padding: 20px;

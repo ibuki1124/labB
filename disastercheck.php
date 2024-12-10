@@ -12,7 +12,7 @@
             <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <div class="cover cover-home">
+    <div class="stripe">
         <header class="page-header">
             <h1 class="align-center">災害対策アプリ</h1>
             <nav>
@@ -26,7 +26,7 @@
             <div class="main">
                 <h2 class="page-title">対策チェック</h2>
                 <div class="right">
-                    <a href="">中断</a>
+                    <a href="index.php">中断</a>
                 </div>
             </div>
                 <div class="main-top">
@@ -34,9 +34,9 @@
                     <h3>進捗/総数</h3>
                 </div>
                 <form class="check-form" action="" method="POST">
-                    <?php/* if($  == ""){*/?><!--分野が備蓄の時-->
+                    <?php/* if($  == ""){*/?><!--分野が備蓄(食料)の時-->
                         <div>
-                            <h1 class="heading-medium">備蓄</h1>
+                            <h1 class="heading-medium">備蓄(食料)</h1>
                             <table class="stocktable align-center">
                                 <tr><th>品名</th><th>有無</th><th>期限</th></tr>
                                 <!--繰り返しで表作成-->
@@ -44,6 +44,16 @@
                                 <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input class="" type="date" name="exp" value=""></input></td></tr>
                             </table>
                         </div>
+                    <?php/* }elseif($  ==""){*/?><!--分野が他の対策の時-->
+                    <div>
+                    <h1 class="heading-medium">備蓄</h1>
+                            <table class="stocktable align-center">
+                                <tr><th>品名</th><th>有無</th><th>備考</th></tr>
+                                <!--繰り返しで表作成-->
+                                <tr><td>品名</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input class="" type="text" name="" placeholder="場所・数量等"></input></td></tr>
+                                <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input type="text" class="" name="" placeholder="場所・数量等"></input></td></tr>
+                            </table>
+                    </div><?php/* }*/?>
                     <?php/* }elseif($  ==""){*/?><!--分野が他の対策の時-->
                     <div>
                         <h1 class="heading-medium">チェック項目</h1>
@@ -57,8 +67,8 @@
                 </form>
             </div>
         </main>
-        <footer class="page-footer">
+        <!--<footer class="page-footer">
             <h3 class="heading-midium">mail:b.uchidaken@gmail.com</h3>
-        </footer>
+        </footer>-->
     </body>
 </html>
