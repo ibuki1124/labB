@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    background-color: #007bff;
+    color: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header a {
+    color: black;
+    text-decoration: none;
+    margin: 0 10px;
+}
+header a:hover {
+    text-decoration: underline;
+}
+
+.stripe {
+    background: repeating-linear-gradient(-45deg, #f4f400, #f4f400 5px, #979700 5px, #979700 10px);
+  }
+
+.container {
+    padding: 20px;
+}
+.button {
+    display: block;
+    margin: 20px 0;
+    padding: 15px 20px;
+    background-color: #28a745;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.button:hover {
+    background-color: #218838;
+}
+
+.aplication_name {
+    text-align: center;
+}
