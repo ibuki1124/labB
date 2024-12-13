@@ -12,7 +12,7 @@
             <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <div class="stripe">
+    <div class="cover-home">
         <header class="page-header">
             <h1 class="align-center">災害対策アプリ</h1>
             <nav>
@@ -38,20 +38,28 @@
                         <div>
                             <h1 class="heading-medium">備蓄(食料)</h1>
                             <table class="stocktable align-center">
-                                <tr><th>品名</th><th>有無</th><th>期限</th></tr>
+                                <thead>
+                                    <tr><th>品名</th><th>有無</th><th>期限</th></tr>
+                                </thead>
+                                <tbody>
                                 <!--繰り返しで表作成-->
                                 <tr><td>品名</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input class="" type="date" name="exp" value="null"></input></td></tr>
                                 <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input class="" type="date" name="exp" value=""></input></td></tr>
+                                </tbody>
                             </table>
                         </div>
                     <?php/* }elseif($  ==""){*/?><!--分野が他の対策の時-->
                     <div>
                     <h1 class="heading-medium">備蓄</h1>
                             <table class="stocktable align-center">
+                            <thead>
                                 <tr><th>品名</th><th>有無</th><th>備考</th></tr>
+                            </thead>
+                            <tbody>
                                 <!--繰り返しで表作成-->
                                 <tr><td>品名</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input class="" type="text" name="" placeholder="場所・数量等"></input></td></tr>
                                 <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input type="text" class="" name="" placeholder="場所・数量等"></input></td></tr>
+                                </tbody>
                             </table>
                     </div><?php/* }*/?>
                     <?php/* }elseif($  ==""){*/?><!--分野が他の対策の時-->

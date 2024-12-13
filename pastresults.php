@@ -13,7 +13,7 @@
             <link rel="stylesheet" href="style.css">
     </head>
     <body>
-    <div class="stripe">
+    <div class="cover-home">
         <header class="page-header">
             <h1 class="align-center">災害対策アプリ</h1>
             <nav>
@@ -28,10 +28,14 @@
                 <h2 class="page-title">過去の記録</h2>
             </div>
                 <table class="stocktable align-center">
+                <thead>
                     <tr><th></th><th colspan="2">日付</th></tr>
                     <tr><th>対策</th><th>結果</th><th>備考</th></tr>
+                </thead>
+                <tbody>
                     <!--繰り返しで表作成-->
                     <tr><td>対策</td><td>〇×</td><td>期限とか</td></tr>
+                </tbody>
                 </table>
                 <a href="index.php" class="btn"name="">トップ画面に戻る</a>
                 
