@@ -68,13 +68,13 @@ p{
 .main-nav a:hover{
     color: #260;
 }
-/*.cover{
+.cover{
     background-size: cover;
     background-position: center bottom;
 }
 .cover-home{
     background-color: #8de67a;
-}*/
+}
 
 .heading-large{
     font-size: 2rem;
@@ -143,7 +143,6 @@ table.stocktable {
     min-width: 460px;
     border-collapse: collapse;
     border: 3px solid green;
-    background: #A9E9B6;
 }
 table.stocktable th:nth-child(1){
     width: 50%;
@@ -163,9 +162,13 @@ table.stocktable th{
     color: white;
     vertical-align: top;
 }
-tr:nth-child(even) {
+tbody tr:nth-child(odd) {
     background: #fff;
 }
+tbody tr:nth-child(even) {
+    background: #A9E9B6;
+}
+
 /*hooter*/
 .page-footer{
     background-color: #8de67a;
