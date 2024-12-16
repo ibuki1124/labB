@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="top.css">
+    <link rel="stylesheet" href="../css/top.css">
     <title>災害対策アプリ</title>
 </head>
 <body>
     <header>
-        <img src="C:\xampp\htdocs\labB\アンケートシートのフリー素材.png">
+        <img src="../img/アンケートシートのフリー素材.png">
         <div class="aplication_title">災害対策アプリ</div>
         <nav class="nav-links">
-            <a href="login.html">ログインページへ</a>
+            <a href="login.php">ログインページへ</a>
             <a href="#mypage">マイページへ</a>
             <a href="#history">過去の結果へ</a>
         </nav>
