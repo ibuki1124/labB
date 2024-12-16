@@ -1,29 +1,40 @@
 
+
+
 body {
     font-family: Arial, sans-serif;
+    background-color: #CFE5EF;
     margin: 0;
     padding: 0;
 }
+
 header {
-    background-color: #007bff;
-    color: black;
-    padding: 10px 20px;
+    background-color: #305C70;
+    font-weight:bold;
+    color: #f08402;
+    padding: 10px 20px 10px 0;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
-header a {
-    color: black;
-    text-decoration: none;
-    margin: 0 10px;
+ img{
+    margin-left:20px;
+ }
+.aplication_title{
+    margin-right:0px;
 }
-header a:hover {
-    text-decoration: underline;
+.nav-links {
+    margin-left: auto; /* 右寄せにする */
 }
 
-.stripe {
-    background: repeating-linear-gradient(-45deg, #f4f400, #f4f400 5px, #979700 5px, #979700 10px);
-  }
+.nav-links a {
+    font-weight:normal;
+    color: #F0E2D1;
+    text-decoration: none;
+    margin-left: 15px; /* 各リンクの間隔 */
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
 
 .container {
     padding: 20px;
