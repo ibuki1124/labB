@@ -13,14 +13,14 @@
         <nav class="nav-links">
             <a href="login.php">ログインページへ</a>
             <a href="#mypage">マイページへ</a>
-            <a href="#history">過去の結果へ</a>
+            <a href="pastresults.php">過去の結果へ</a>
         </nav>
     </header>
 
     <h1 class="aplication_name">災害対策アプリ</h1>
 
     <div class="container">
-        <a href="#check" class="button">対策チェックへ</a>
+        <a href="disastercheck.php" class="button">対策チェックへ</a>
         <a href="#actions" class="button">災害時の行動(リスト、災害別)へ</a>
     </div>
 </body>
