@@ -199,10 +199,4 @@ td.pastr:first-child, th.pastr:first-child {
     .heading-large{
         font-size: 4rem;
     }
-    /*hedder*/
-    .page-header{
-        display: flex;
-        justify-content: space-between;
-        padding-top: 1.5rem;
-    }
 }
