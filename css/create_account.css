@@ -1,4 +1,4 @@
- body{
+body{
     background-color: #CFE5EF;
  }
 
@@ -43,17 +43,3 @@
   button[type="button"]:hover {
     background-color: #45a049;
   }
-
-.create-links {
-  font-weight:normal;
-  color: blue;
-  text-align: center;
-  padding-top:10px;
-}
-.create-links a{
-  display: inline-block;
-  text-decoration: none;
-}
-.create-links a:hover {
-  text-decoration: underline;
-}
