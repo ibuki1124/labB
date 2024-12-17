@@ -1,0 +1,50 @@
+@charset "UTF-8";
+/*共通部分*/
+header {
+    font-weight:bold;
+    color: #f08402;
+    padding: 10px 20px 10px 0;
+    display: flex;
+    align-items: center;
+}
+.align-center{
+    text-align: center;
+}
+.page-header{
+    display: flex;
+    flex-flow: column;
+    padding-top: 1.5rem;
+}
+img{
+    margin-left:20px;
+}
+.aplication_title{
+    margin-right:0px;
+}
+.aplication_title a:link, a:visited, a:hover, a:active{
+    color: #f08402;
+}
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight:normal;
+    color: #F0E2D1;
+    margin-left: 15px; /* 各リンクの間隔 */
+}
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/*デスクトップ*/
+@media(min-width:860px){
+    /*header*/
+    .page-header{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.5rem;
+    }
+}
