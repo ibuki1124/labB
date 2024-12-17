@@ -22,7 +22,7 @@ img{
 .aplication_title{
     margin-right:0px;
 }
-.aplication_title a:link, a:visited, a:hover, a:active{
+a:link.aplication_title, a:visited.aplication_title, a:hover.aplication_title, a:active.aplication_title{
     color: #f08402;
 }
 .nav-links {
