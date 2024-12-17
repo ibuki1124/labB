@@ -22,9 +22,13 @@ img{
 .aplication_title{
     margin-right:0px;
 }
-a:link.aplication_title, a:visited.aplication_title, a:hover.aplication_title, a:active.aplication_title{
+.aplication_title a:link, 
+.aplication_title a:visited, 
+.aplication_title a:hover, 
+.aplication_title a:active {
     color: #f08402;
 }
+
 .nav-links {
     display: flex;
     justify-content: center;
