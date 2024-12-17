@@ -11,8 +11,9 @@
         <img src="../img/アンケートシートのフリー素材.png">
         <div class="aplication_title">災害対策アプリ</div>
         <nav class="nav-links">
+            <a href="create_account.php">アカウント作成へ</a>
             <a href="login.php">ログインページへ</a>
-            <a href="#mypage">マイページへ</a>
+            <a href="mypage.php">マイページへ</a>
             <a href="pastresults.php">過去の結果へ</a>
         </nav>
     </header>
