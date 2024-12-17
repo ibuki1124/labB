@@ -13,16 +13,7 @@
             <link rel="stylesheet" href="../css/style.css">
     </head>
     <body>
-    <div class="cover-home">
-        <header class="page-header">
-            <h1 class="align-center">災害対策アプリ</h1>
-            <nav>
-            <ul class="main-nav">
-                <li><a href="">マイページ</a></li>
-            </ul>
-            </nav>        
-        </header>
-    </div>
+        <?php include("header.php"); ?>
         <main class="align-center">
             <div class="main">
                 <h2 class="page-title">災害対策チェック結果</h2>
