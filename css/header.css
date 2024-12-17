@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /*共通部分*/
 header {
+    background-color: #305C70;
     font-weight:bold;
     color: #f08402;
     padding: 10px 20px 10px 0;
