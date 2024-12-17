@@ -10,7 +10,7 @@
   <h1>ログイン成功</h1>
   <div class="container">
     <a href="top.php" class="button">トップページへ</a>
-    <a href="#mypage" class="button">マイページへ</a>
+    <a href="#mypage" class="button">マイページへ(仮）</a>
   </div>
 </body>
 

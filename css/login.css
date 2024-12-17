@@ -39,21 +39,21 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  
+
   button[type="button"]:hover {
     background-color: #45a049;
   }
 
-.create-links {
-  font-weight:normal;
-  color: blue;
-  text-align: center;
-  padding-top:10px;
-}
-.create-links a{
-  display: inline-block;
-  text-decoration: none;
-}
-.create-links a:hover {
-  text-decoration: underline;
-}
+  .create_links {
+    font-weight:normal;
+    color: blue;
+    text-align: center;
+  }
+  .create_links a{
+    display: inline-block;
+    margin-top:10px;
+    text-decoration: none;
+  }
+  .create_links a:hover {
+    text-decoration: underline;
+  }

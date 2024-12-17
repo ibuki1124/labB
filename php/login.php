@@ -13,7 +13,7 @@
         <input type="text" placeholder="Username" name="username" />
         <input type="password" placeholder="Password" name="password" />
         <button type="button" onclick="location.href='login-success.php'">ログイン</button>
-        <div class="create-links">
+        <div class="create_links">
             <a href="create_account.php">アカウントがない方はこちらから登録してください</a>
         </div>
     </form>
