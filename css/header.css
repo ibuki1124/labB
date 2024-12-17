@@ -1,5 +1,11 @@
 @charset "UTF-8";
 /*共通部分*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #CFE5EF;
+    margin: 0;
+    padding: 0;
+}
 header {
     background-color: #305C70;
     font-weight:bold;
