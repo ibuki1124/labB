@@ -18,16 +18,18 @@
             <div class="main">
                 <h2 class="page-title">過去の記録</h2>
             </div>
-                <table class="stocktable align-center">
+            <div class="main">
+                <table class="stocktable align-center pastr">
                 <thead>
-                    <tr><th></th><th colspan="2">日付</th></tr>
-                    <tr><th>対策</th><th>結果</th><th>備考</th></tr>
+                    <tr><th></th><th>日付</th></tr>
+                    <tr><th>対策</th><th>結果</th></tr>
                 </thead>
                 <tbody>
                     <!--繰り返しで表作成-->
-                    <tr><td>対策</td><td>〇×</td><td>期限とか</td></tr>
+                    <tr><td>対策</td><td>〇×</td></tr>
                 </tbody>
                 </table>
+            </div>
                 <a href="top.php" class="btn"name="">トップ画面に戻る</a>
                 
                 

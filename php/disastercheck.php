@@ -20,50 +20,48 @@
                     <a href="top.php">中断</a>
                 </div>
             </div>
-                <div class="main-top">
-                    <h3>分野</h3><!--災害or備蓄。なくてもいいかも？-->
-                    <h3>進捗/総数</h3>
+            <form class="check-form" action="" method="POST">
+                <div class="main">
+                    <h1 class="heading-medium">備蓄(食料)</h1>
+                    <table class="stocktable align-center">
+                        <thead>
+                            <tr><th>備蓄品</th><th>有無</th></tr>
+                        </thead>
+                        <tbody>
+                        <!--繰り返しで表作成-->
+                            <tr><td>品名</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
+                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
+                        </tbody>
+                    </table>
                 </div>
-                <form class="check-form" action="" method="POST">
-                    <?php/* if($  == ""){*/?><!--分野が備蓄(食料)の時-->
-                        <div>
-                            <h1 class="heading-medium">備蓄(食料)</h1>
-                            <table class="stocktable align-center">
-                                <thead>
-                                    <tr><th>品名</th><th>有無</th><th>期限</th></tr>
-                                </thead>
-                                <tbody>
-                                <!--繰り返しで表作成-->
-                                <tr><td>品名</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input class="" type="date" name="exp" value="null"></input></td></tr>
-                                <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input class="" type="date" name="exp" value=""></input></td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    <?php/* }elseif($  ==""){*/?><!--分野が他の対策の時-->
-                    <div>
+                <div class="main">
                     <h1 class="heading-medium">備蓄</h1>
-                            <table class="stocktable align-center">
-                            <thead>
-                                <tr><th>品名</th><th>有無</th><th>備考</th></tr>
-                            </thead>
-                            <tbody>
-                                <!--繰り返しで表作成-->
-                                <tr><td>品名</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input class="" type="text" name="" placeholder="場所・数量等"></input></td></tr>
-                                <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td><td><input type="text" class="" name="" placeholder="場所・数量等"></input></td></tr>
-                                </tbody>
-                            </table>
-                    </div><?php/* }*/?>
-                    <?php/* }elseif($  ==""){*/?><!--分野が他の対策の時-->
-                    <div>
-                        <h1 class="heading-medium">チェック項目</h1>
-                        <p>細かな説明あれば</p>
-                        <div class="radiobtn heading-medium">
-                            対策済<input class="green" type="radio" name="radio" value="true"></input><br>
-                            未対策<input class="green" type="radio" name="radio" value="false"></input>
-                        </div>
-                    </div><?php/* }*/?>
-                    <button class="btn" type="submit" name="">続行</button>
-                </form>
+                    <table class="stocktable align-center">
+                        <thead>
+                            <tr><th>備蓄品</th><th>有無</th></tr>
+                        </thead>
+                        <tbody>
+                            <!--繰り返しで表作成-->
+                            <tr><td>品名</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
+                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="main">
+                    <h1 class="heading-medium">対策行動</h1>
+                    <table class="stocktable align-center">
+                        <thead>
+                            <tr><th>対策</th><th>有無</th></tr>
+                        </thead>
+                        <tbody>
+                            <!--繰り返しで表作成-->
+                            <tr><td>チェック項目</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
+                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <button class="btn" type="submit" name="">続行</button>
+            </form>
             </div>
         </main>
         <!--<footer class="page-footer">
