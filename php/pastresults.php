@@ -11,6 +11,7 @@
             <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <!--オリジナルCSS-->
             <link rel="stylesheet" href="../css/style.css">
+            <link rel="stylesheet" href="../css/header.css">
     </head>
     <body>
         <?php include("header.php"); ?>
