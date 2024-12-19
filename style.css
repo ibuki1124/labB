@@ -23,13 +23,14 @@ p{
     text-align: right;
 }
 
+
 /*見出し*/
 .page-title,
 .heading-large,
 .heading-medium{
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
-    
+    padding: 20px 5px 0;
 }
 
 /*ボタン*/
@@ -74,15 +75,6 @@ p{
 }
 .cover-home{
     background-color: #8de67a;
-}
-
-.heading-large{
-    font-size: 2rem;
-}
-.heading-medium{
-    font-size: 1.5rem;
-    line-height: 1;
-    margin-bottom: 1rem;
 }
 
 .align-center *{
@@ -168,6 +160,51 @@ tbody tr:nth-child(odd) {
 tbody tr:nth-child(even) {
     background: #A9E9B6;
 }
+<<<<<<< Updated upstream:style.css
+=======
+td.pastr:first-child, th.pastr:first-child {
+    position: sticky; /* 固定の指定 */
+    left: 0; /* 左側に固定 */
+    background-color: #f9f9f9; /* 背景色を指定（任意） */
+    z-index: 1; /* 重なり順を調整 */
+}
+.progress-container {
+    position: fixed;
+    top: 100px;
+    left: 3%;
+    display: flex; /* 横並びにする */
+    align-items: center; /* 縦中央揃え */
+    width: 40vw; /* 画面幅の30% */
+    background-color: rgba(255, 255, 255, 0.9); /* 背景を半透明に */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* 前面に表示 */
+}
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 10px; /* バーとパーセント表示の間隔 */
+}
+.progress {
+    height: 100%;
+    width: 0%;
+    background-color: #4caf50;
+    transition: width 0.3s ease;
+    top: 0;
+    left: 0;
+}
+.progress-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+    text-align: right; /* 右揃え */
+}
+>>>>>>> Stashed changes:css/style.css
 
 /*hooter*/
 .page-footer{
@@ -193,10 +230,26 @@ tbody tr:nth-child(even) {
     .heading-large{
         font-size: 4rem;
     }
+<<<<<<< Updated upstream:style.css
     /*hedder*/
     .page-header{
         display: flex;
         justify-content: space-between;
         padding-top: 1.5rem;
     }
+=======
+    .progress-container {
+        position: fixed;
+        top: 80px; 
+        left: 30px;
+        width: 35%;
+        max-width: 600px; 
+        z-index: 1000; 
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+>>>>>>> Stashed changes:css/style.css
 }

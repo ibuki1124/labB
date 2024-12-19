@@ -10,7 +10,12 @@
         <!--リセットCSS-->
             <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <!--オリジナルCSS-->
+<<<<<<< Updated upstream:pastresults.php
             <link rel="stylesheet" href="style.css">
+=======
+            <link rel="stylesheet" href="../css/style.css">
+            <link rel="stylesheet" href="../css/header.css">
+>>>>>>> Stashed changes:php/pastresults.php
     </head>
     <body>
     <div class="cover-home">
