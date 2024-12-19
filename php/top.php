@@ -4,25 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/top.css">
+    <link rel="stylesheet" href="../css/header.css">
     <title>災害対策アプリ</title>
 </head>
 <body>
-    <header>
-        <img src="../img/アンケートシートのフリー素材.png">
-        <div class="aplication_title">災害対策アプリ</div>
-        <nav class="nav-links">
-            <a href="create_account.php">アカウント作成へ</a>
-            <a href="login.php">ログインページへ</a>
-            <a href="mypage.php">マイページへ</a>
-            <a href="pastresults.php">過去の結果へ</a>
-        </nav>
-    </header>
+    <?php include("temp/header.php"); ?>
 
     <h1 class="aplication_name">災害対策アプリ</h1>
 
     <div class="container">
         <a href="disastercheck.php" class="button">対策チェックへ</a>
-        <a href="#actions" class="button">災害時の行動(リスト、災害別)へ</a>
+        <!-- <a href="#actions" class="button">災害時の行動(リスト、災害別)へ</a> -->
     </div>
 </body>
 </html>
