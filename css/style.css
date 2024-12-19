@@ -130,7 +130,7 @@ input[type=checkbox].green:checked,input[type=checkbox].green:indeterminate,inpu
 table.stocktable {
     table-layout: fixed;
     width: 100%;
-    min-width: 460px;
+    /*min-width: 460px;*/
     border-collapse: collapse;
     border: 3px solid green;
 }
