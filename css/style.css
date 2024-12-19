@@ -53,9 +53,6 @@ p{
 .page-header{
     padding-top: .1rem;
 }
-.stripe {
-    background: repeating-linear-gradient(-45deg, #f4f400, #f4f400 5px, #979700 5px, #979700 10px);
-}
 .main-nav{
     display: flex;
     justify-content: center;
