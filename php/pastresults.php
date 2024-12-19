@@ -14,7 +14,7 @@
             <link rel="stylesheet" href="../css/header.css">
     </head>
     <body>
-        <?php include("header.php"); ?>
+        <?php include("temp/header.php"); ?>
         <main class="align-center">
             <div class="main">
                 <h2 class="page-title">過去の記録</h2>

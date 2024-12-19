@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="../css/header.css">
     </head>
     <body>
-        <?php include("header.php"); ?>
+        <?php include("temp/header.php"); ?>
         <main class="">
             <h2 class="page-title">対策チェック</h2>
             <div class="progress-container">

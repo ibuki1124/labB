@@ -14,7 +14,7 @@
             <link rel="stylesheet" href="../css/header.css">
     </head>
     <body>
-        <?php include("header.php"); ?>
+        <?php include("temp/header.php"); ?>
         <main class="align-center main">
             <div class="main">
                 <h2 class="page-title">災害対策チェック結果</h2>
