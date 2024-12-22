@@ -24,6 +24,7 @@
             $results = $stmt->fetchAll();
             if (!empty($results)){ // 名前とパスワードが一致した時
               foreach ($results as $row){
+                $_SESSION["user_id"] = $row["id"];
                 $_SESSION["user_name"] = $row["name"];
                 $_SESSION["mail"] = $row["mail"];
                 $_SESSION["password"] = $row["password"];
