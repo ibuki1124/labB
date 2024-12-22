@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/create_account.css">
+  <link rel="stylesheet" href="../css/header.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>アカウント作成ページ</title>
 </head>
 <body>
+<?php include("temp/header.php"); ?>
 <div class="container">
     <form action="login.php" method="post">
         <p class="fsize">アカウントの作成</p>

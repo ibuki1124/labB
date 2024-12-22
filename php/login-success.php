@@ -4,9 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/login-success.css">
+  <link rel="stylesheet" href="../css/header.css">
   <title>ログイン成功</title>
 </head>
 <body>
+<?php include("temp/header.php"); ?>
   <?php
     session_start();
     include("temp/db.php");
