@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/mypage.css">
+    <link rel="stylesheet" href="../css/header.css">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>マイページ</title>    
 </head>
 <body>
+    <?php include("temp/header.php"); ?>
     <div class="container">
         <h1>マイページ</h1>
         
