@@ -8,11 +8,11 @@
   $pdo = new PDO($db, $user, $pass, array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING));
 
   // 表示されているか確認したい場合にコメントアウト外す
-  // $sql = "SELECT * FROM users";
+  // $sql = "SELECT * FROM action_lists";
   // $stmt = $pdo->prepare($sql);
   // $stmt->execute();
   // $results = $stmt->fetchAll();
   // foreach ($results as $row){
-  //   echo $row["name"]."<br>";
+  //   echo $row["action"]."<br>";
   // }
 ?>

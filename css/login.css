@@ -30,7 +30,7 @@
     border-radius: 4px;
   }
   
-  button[type="button"] {
+  button[type="submit"] {
     width: 100%;
     padding: 10px;
     background-color: #4CAF50;
@@ -40,7 +40,7 @@
     cursor: pointer;
   }
   
-  button[type="button"]:hover {
+  button[type="submit"]:hover {
     background-color: #45a049;
   }
 
