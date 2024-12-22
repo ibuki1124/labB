@@ -8,7 +8,10 @@
     <title>災害対策アプリ</title>
 </head>
 <body>
-    <?php include("temp/header.php"); ?>
+    <?php
+        session_start();
+        include("temp/header.php");
+    ?>
 
     <h1 class="aplication_name">災害対策アプリ</h1>
 

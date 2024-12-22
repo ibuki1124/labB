@@ -8,7 +8,6 @@
   <title>ログインページ</title>
 </head>
 <body>
-<?php include("temp/header.php"); ?>
 <?php
     session_start();
     include("temp/db.php");
@@ -50,6 +49,7 @@
             header("Location:create_account.php");
         }
     }
+    include("temp/header.php");
 ?>
 <div class="container">
     <form action="login-success.php" method="post">

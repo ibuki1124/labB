@@ -8,7 +8,6 @@
   <title>ログイン成功</title>
 </head>
 <body>
-<?php include("temp/header.php"); ?>
   <?php
     session_start();
     include("temp/db.php");
@@ -40,6 +39,7 @@
         header("Location:login.php");
         exit;
     }
+    include("temp/header.php");
   ?>
   <h1>ログイン成功</h1>
   <div class="container">

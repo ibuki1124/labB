@@ -8,7 +8,6 @@
     <title>マイページ</title>    
 </head>
 <body>
-    <?php include("temp/header.php"); ?>
     <?php
         session_start();
         include("temp/db.php");
@@ -17,6 +16,7 @@
             exit;
         }
     ?>
+    <?php include("temp/header.php"); ?>
     <div class="container">
         <h1>マイページ</h1>
         

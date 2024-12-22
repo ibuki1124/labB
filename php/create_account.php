@@ -8,13 +8,13 @@
   <title>アカウント作成ページ</title>
 </head>
 <body>
-<?php include("temp/header.php"); ?>
 <?php
   session_start();
   if (!empty($_SESSION["user_name"])){ // ログイン済みの場合
-      header("Location:top.php");
-      exit;
+    header("Location:top.php");
+    exit;
   }
+  include("temp/header.php");
 ?>
 <div class="container">
     <form action="login.php" method="post">
