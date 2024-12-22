@@ -14,6 +14,13 @@
             <link rel="stylesheet" href="../css/header.css">
     </head>
     <body>
+        <?php
+            session_start();
+            if (empty($_SESSION["user_name"])){ // ログインしていない場合
+                header("Location:login.php");
+                exit;
+            }
+        ?>
         <?php include("temp/header.php"); ?>
         <main class="align-center">
             <div class="main">

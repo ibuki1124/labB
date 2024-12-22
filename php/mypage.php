@@ -8,6 +8,14 @@
     <title>マイページ</title>    
 </head>
 <body>
+    <?php
+        session_start();
+        include("temp/db.php");
+        if (empty($_SESSION["user_name"])){ // ログインしていない場合
+            header("Location:login.php");
+            exit;
+        }
+    ?>
     <?php include("temp/header.php"); ?>
     <div class="container">
         <h1>マイページ</h1>
@@ -15,8 +23,8 @@
         <!-- 現在の情報表示 -->
         <section class="current-info">
             <h2>現在のアカウント情報</h2>
-            <p><strong>メールアドレス:</strong> メールアドレス</p>
-            <p><strong>パスワード:</strong> パスワード</p>
+            <p><strong>メールアドレス:</strong> <?= $_SESSION["mail"] ?></p>
+            <p><strong>パスワード:</strong> <?= $_SESSION["password"] ?></p>
         </section>
 
         <!-- 変更フォーム -->
@@ -29,7 +37,7 @@
 
                 <!-- パスワードの変更 -->
                 <label for="new-password">新しいパスワード:</label>
-                <input type="password" id="new-password" name="new-password" placeholder="新しいパスワードを入力" required>
+                <input type="password" id="new-password" name="new-password" placeholder="新しいパスワードを入力（8文字以内）" maxlength="8" required>
 
                 <!-- 更新ボタン -->
                 <button type="submit">更新する</button>

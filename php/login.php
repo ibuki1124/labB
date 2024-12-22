@@ -8,10 +8,16 @@
   <title>ログインページ</title>
 </head>
 <body>
-<?php include("temp/header.php"); ?>
 <?php
     session_start();
     include("temp/db.php");
+    if (!empty($_SESSION["user_name"])){ // ログイン済みの場合
+        header("Location:top.php");
+        exit;
+    }else{
+        $_SESSION = array(); //セッションの中身をすべて削除
+        session_destroy(); //セッションを破棄
+    }
     if (isset($_POST["sign_up"])){ // アカウント作成ページからの遷移
         if (isset($_POST["username"], $_POST["mail"], $_POST["password"]) && !empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["mail"])){
             $user_name = $_POST["username"];
@@ -43,6 +49,7 @@
             header("Location:create_account.php");
         }
     }
+    include("temp/header.php");
 ?>
 <div class="container">
     <form action="login-success.php" method="post">

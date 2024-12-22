@@ -13,7 +13,14 @@
         <link rel="stylesheet" href="../css/header.css">
     </head>
     <body>
-        <?php include("temp/header.php"); ?>
+        <?php
+            session_start();
+            if (empty($_SESSION["user_name"])){
+                header("Location:login.php");
+                exit;
+            }
+            include("temp/header.php");
+        ?>
         <main class="">
             <h2 class="page-title">対策チェック</h2>
             <div class="progress-container">

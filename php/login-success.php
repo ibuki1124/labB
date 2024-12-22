@@ -8,7 +8,6 @@
   <title>ログイン成功</title>
 </head>
 <body>
-<?php include("temp/header.php"); ?>
   <?php
     session_start();
     include("temp/db.php");
@@ -24,19 +23,23 @@
             $stmt->execute();
             $results = $stmt->fetchAll();
             if (!empty($results)){ // 名前とパスワードが一致した時
-                $_SESSION["user_name"] = $user_name;
+              foreach ($results as $row){
+                $_SESSION["user_name"] = $row["name"];
+                $_SESSION["mail"] = $row["mail"];
+                $_SESSION["password"] = $row["password"];
+              }
             }else{ // 名前とパスワードが一致しなかった時
-                if (isset($_POST["login"])){
-                    header("Location:login.php");
-                    exit;
-                }else{
-                    $_SESSION["user_name"] = $user_name;
-                }
+              header("Location:login.php");
+              exit;
             }
         }else{ // 入力が不十分な時
             header("Location:login.php");
         }
+    }else{ // ログインページからの遷移でない時
+        header("Location:login.php");
+        exit;
     }
+    include("temp/header.php");
   ?>
   <h1>ログイン成功</h1>
   <div class="container">
