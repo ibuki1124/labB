@@ -15,6 +15,13 @@
     </head>
     <body>
         <?php include("temp/header.php"); ?>
+        <?php
+            session_start();
+            if (empty($_SESSION["user_name"])){ // ログインしていない場合
+                header("Location:login.php");
+                exit;
+            }
+        ?>
         <main class="align-center">
             <div class="main">
                 <h2 class="page-title">過去の記録</h2>

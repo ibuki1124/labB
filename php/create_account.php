@@ -9,6 +9,13 @@
 </head>
 <body>
 <?php include("temp/header.php"); ?>
+<?php
+  session_start();
+  if (!empty($_SESSION["user_name"])){ // ログイン済みの場合
+      header("Location:top.php");
+      exit;
+  }
+?>
 <div class="container">
     <form action="login.php" method="post">
         <p class="fsize">アカウントの作成</p>
