@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="../css/create_account.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ログインページ</title>
+  <title>アカウント作成ページ</title>
 </head>
 <body>
 <div class="container">
-    <form>
-        <p class="fsize">災害対策アプリにログイン</p>
-        <input type="text" placeholder="Username" name="username" />
-        <input type="password" placeholder="Password" name="password" />
-        <button type="button" onclick="location.href='login-success.php'">登録</button>
+    <form action="login.php" method="post">
+        <p class="fsize">アカウントの作成</p>
+        <input type="text" placeholder="Username (20 characters max)" name="username" maxlength="20" />
+        <input type="email" placeholder="Mail" name="mail" />
+        <input type="password" placeholder="Password (8 characters max)" name="password" maxlength="8" />
+        <button type="submit" name="sign_up">登録</button>
     </form>
 </div>
 </body>

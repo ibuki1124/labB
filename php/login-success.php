@@ -7,6 +7,35 @@
   <title>ログイン成功</title>
 </head>
 <body>
+  <?php
+    session_start();
+    include("temp/db.php");
+    if (isset($_POST["login"])){ // ログインページからの遷移
+        if (isset($_POST["username"], $_POST["password"]) && !empty($_POST["username"]) && !empty($_POST["password"])){
+            $user_name = $_POST["username"];
+            $password = $_POST["password"];
+            // 以下sql
+            $sql = 'SELECT * FROM users where name=:name and password=:password'; // 名前とパスワードが一致するか
+            $stmt = $pdo->prepare($sql);
+            $stmt->bindParam(':name', $user_name, PDO::PARAM_STR);
+            $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+            $stmt->execute();
+            $results = $stmt->fetchAll();
+            if (!empty($results)){ // 名前とパスワードが一致した時
+                $_SESSION["user_name"] = $user_name;
+            }else{ // 名前とパスワードが一致しなかった時
+                if (isset($_POST["login"])){
+                    header("Location:login.php");
+                    exit;
+                }else{
+                    $_SESSION["user_name"] = $user_name;
+                }
+            }
+        }else{ // 入力が不十分な時
+            header("Location:login.php");
+        }
+    }
+  ?>
   <h1>ログイン成功</h1>
   <div class="container">
     <a href="top.php" class="button">トップページへ</a>
