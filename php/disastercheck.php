@@ -15,10 +15,74 @@
     <body>
         <?php
             session_start();
+
             if (empty($_SESSION["user_name"])){
                 header("Location:login.php");
                 exit;
             }
+                include("temp/db.php");
+                $sql = "SELECT * FROM action_lists WHERE genre_id =1;";
+                $stmt = $pdo->prepare($sql);
+                $stmt -> execute();
+                $foods = $stmt -> fetchAll();
+
+                $sql = "SELECT * FROM action_lists WHERE genre_id =2;";
+                $stmt = $pdo->prepare($sql);
+                $stmt -> execute();
+                $things = $stmt -> fetchAll();
+
+                $sql = "SELECT * FROM action_lists WHERE genre_id =3;";
+                $stmt = $pdo->prepare($sql);
+                $stmt -> execute();
+                $act = $stmt -> fetchAll();
+
+                // チェックした項目を配列に格納
+                if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                    // チェックされた項目を取得
+                    $checkedItems = $_POST['actions'] ?? []; // チェックされたIDの配列
+                    $userId = $_SESSION["user_id"]; // ログインユーザーID
+                    $date = date('Y/m/d H:i'); // 現在の日時
+
+                    if (!empty($checkedItems)) {
+                        // 取得したデータを確認
+                        // foreach ($checkedItems as $itemId) {
+                        //     echo "Checked Item ID: " . htmlspecialchars($itemId) . "<br>";
+                        // }
+                        $checkedItemsJson = json_encode($checkedItems);
+
+                        // var_dump($checkedItems); // 配列の内容を確認
+                        // echo $checkedItemsJson;   // カンマ区切り文字列を確認
+
+                        try {
+                            //スコア集計
+                            $placeholders = rtrim(str_repeat('?,', count($checkedItems)), ',');
+                            $sql = "SELECT SUM(score) AS total_score FROM action_lists WHERE id IN ($placeholders)";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->execute($checkedItems);
+                            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+                            $score = $result['total_score'] ?? 0; // 合計スコア（該当がなければ0）
+
+                            //結果保存
+                            $sql = "INSERT INTO past_scores (score, date, check_index, user_id) 
+                                    VALUES (:score, :date, :check_index, :user_id)";
+                            $stmt = $pdo->prepare($sql);
+                            $stmt->bindParam(':score', $score, PDO::PARAM_INT);
+                            $stmt->bindParam(':date', $date, PDO::PARAM_STR);
+                            $stmt->bindParam(':check_index', $checkedItemsJson, PDO::PARAM_STR);
+                            $stmt->bindParam(':user_id', $userId, PDO::PARAM_INT);
+                            $stmt->execute();
+                
+                            // echo "チェックリストを保存しました。";
+                        } catch (PDOException $e) {
+                            // echo "エラー: " . $e->getMessage();
+                        }
+                    } /*else {
+                        echo "チェックされた項目がありません。";
+                    } */
+                }
+
+
+
             include("temp/header.php");
         ?>
         <main class="">
@@ -38,9 +102,12 @@
                         </thead>
                         <tbody>
                         <!--繰り返しで表作成-->
-                            <tr><td>品名</td><td><input class="checkbox" type="checkbox"></input></td></tr>
-                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
-                        </tbody>
+                            <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox"></input></td></tr>
+                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
+                            <?php foreach ($foods as $f): ?>
+                                <tr><td><?= $f['action'] ?></td><td><input class="green" type="checkbox" name="actions[]" value="<?= $f['id'] ?>"></input></td></tr>
+                            <?php endforeach; ?>
+                            </tbody>
                     </table>
                 </div>
                 <div>
@@ -51,8 +118,11 @@
                         </thead>
                         <tbody>
                             <!--繰り返しで表作成-->
-                            <tr><td>品名</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr>
-                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
+                            <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr>
+                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
+                            <?php foreach ($things as $t): ?>
+                                <tr><td><?= $t['action'] ?></td><td><input class="green" type="checkbox" name="actions[]" value="<?= $t['id'] ?>"></input></td></tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -64,8 +134,11 @@
                         </thead>
                         <tbody>
                             <!--繰り返しで表作成-->
-                            <tr><td>チェック項目</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr>
-                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr>
+                            <!-- <tr><td>チェック項目</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr>
+                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
+                            <?php foreach ($act as $a): ?>
+                                <tr><td><?= $a['action'] ?></td><td><input class="green" type="checkbox" name="actions[]" value="<?= $a['id'] ?>"></input></td></tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>
