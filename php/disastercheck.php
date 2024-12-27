@@ -105,7 +105,7 @@
                             <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox"></input></td></tr>
                             <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
                             <?php foreach ($foods as $f): ?>
-                                <tr><td><?= $f['action'] ?></td><td><input class="green" type="checkbox" name="actions[]" value="<?= $f['id'] ?>"></input></td></tr>
+                                <tr><td><?= $f['action'] ?></td><td><input class="checkbox"" type="checkbox" name="actions[]" value="<?= $f['id'] ?>"></input></td></tr>
                             <?php endforeach; ?>
                             </tbody>
                     </table>
@@ -121,7 +121,7 @@
                             <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr>
                             <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
                             <?php foreach ($things as $t): ?>
-                                <tr><td><?= $t['action'] ?></td><td><input class="green" type="checkbox" name="actions[]" value="<?= $t['id'] ?>"></input></td></tr>
+                                <tr><td><?= $t['action'] ?></td><td><input class="checkbox"" type="checkbox" name="actions[]" value="<?= $t['id'] ?>"></input></td></tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -137,7 +137,7 @@
                             <!-- <tr><td>チェック項目</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr>
                             <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
                             <?php foreach ($act as $a): ?>
-                                <tr><td><?= $a['action'] ?></td><td><input class="green" type="checkbox" name="actions[]" value="<?= $a['id'] ?>"></input></td></tr>
+                                <tr><td><?= $a['action'] ?></td><td><input class="checkbox"" type="checkbox" name="actions[]" value="<?= $a['id'] ?>"></input></td></tr>
                             <?php endforeach; ?>
                         </tbody>
                     </table>
@@ -152,13 +152,13 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                const checkboxes = document.querySelectorAll(".green");
+                const checkboxes = document.querySelectorAll(".checkbox");
                 const progressBar = document.querySelector(".progress");
                 const progressText = document.getElementById("progress-text");
 
                 function updateProgress() {
                     const total = checkboxes.length; // 総数
-                    const checked = document.querySelectorAll(".green:checked").length; // チェックされた数
+                    const checked = document.querySelectorAll(".checkbox:checked").length; // チェックされた数
                     const percentage = ((checked / total) * 100).toFixed(1); // 進捗率
 
                     // 進捗バー更新
