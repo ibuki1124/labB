@@ -41,7 +41,7 @@
                     // チェックされた項目を取得
                     $checkedItems = $_POST['actions'] ?? []; // チェックされたIDの配列
                     $userId = $_SESSION["user_id"]; // ログインユーザーID
-                    $date = date('Y/m/d H:i'); // 現在の日時
+                    $date = date('Y-m-d H:i:s'); // 現在の日時
 
                     if (!empty($checkedItems)) {
                         // 取得したデータを確認
@@ -152,13 +152,13 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                const checkboxes = document.querySelectorAll(".checkbox");
+                const checkboxes = document.querySelectorAll(".green");
                 const progressBar = document.querySelector(".progress");
                 const progressText = document.getElementById("progress-text");
 
                 function updateProgress() {
                     const total = checkboxes.length; // 総数
-                    const checked = document.querySelectorAll(".checkbox:checked").length; // チェックされた数
+                    const checked = document.querySelectorAll(".green:checked").length; // チェックされた数
                     const percentage = ((checked / total) * 100).toFixed(1); // 進捗率
 
                     // 進捗バー更新
