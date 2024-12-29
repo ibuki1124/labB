@@ -98,15 +98,19 @@
                     <h1 class="heading-medium">備蓄(食料)</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th>備蓄品</th><th>有無</th></tr>
+                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
                         <!--繰り返しで表作成-->
-                            <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox"></input></td></tr>
-                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
-                            <?php foreach ($foods as $f): ?>
-                                <tr><td><?= $f['action'] ?></td><td><input class="checkbox"" type="checkbox" name="actions[]" value="<?= $f['id'] ?>"></input></td></tr>
-                            <?php endforeach; ?>
+                            <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox"></input></td></tr>-->
+                            <?php
+                            $no = 0;
+                            foreach ($foods as $f):?>
+                                <tr><td><?= $f['action'] ?></td><td><input class="radio" type="radio" name="f_<?= $no ?>" value="<?= $f['id'] ?>"></input></td><td><input class="radio" type="radio" name="f_<?= $no ?>" value="<?= $f['id'] ?>"></input></td></tr>
+                            <?php 
+                            $no++;
+                            endforeach; ?>
                             </tbody>
                     </table>
                 </div>
@@ -114,15 +118,19 @@
                     <h1 class="heading-medium">備蓄</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th>備蓄品</th><th>有無</th></tr>
+                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
                             <!--繰り返しで表作成-->
-                            <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr>
-                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
-                            <?php foreach ($things as $t): ?>
-                                <tr><td><?= $t['action'] ?></td><td><input class="checkbox"" type="checkbox" name="actions[]" value="<?= $t['id'] ?>"></input></td></tr>
-                            <?php endforeach; ?>
+                            <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr> -->
+                            <?php
+                            $no = 0;
+                            foreach ($things as $t): ?>
+                                <tr><td><?= $t['action'] ?></td><td><input class="radio" type="radio" name="t_<?= $no ?>" value="<?= $t['id'] ?>"></input></td><td><input class="radio" type="radio" name="t_<?= $no ?>" value="<?= $t['id'] ?>"></input></td></tr>
+                            <?php
+                            $no++;
+                            endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -130,15 +138,19 @@
                     <h1 class="heading-medium">対策行動</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th>対策</th><th>有無</th></tr>
+                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
                             <!--繰り返しで表作成-->
-                            <!-- <tr><td>チェック項目</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr>
-                            <tr><td>2列目以降どうなるか見たいだけなので消していい</td><td><input class="green" type="checkbox" name="" value=""></input></td></tr> -->
-                            <?php foreach ($act as $a): ?>
-                                <tr><td><?= $a['action'] ?></td><td><input class="checkbox"" type="checkbox" name="actions[]" value="<?= $a['id'] ?>"></input></td></tr>
-                            <?php endforeach; ?>
+                            <!-- <tr><td>チェック項目</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr> -->
+                            <?php
+                            $no = 0;
+                            foreach ($act as $a): ?>
+                                <tr><td><?= $a['action'] ?></td><td><input class="radio" type="radio" name="a_<?= $no ?>" value="<?= $a['id'] ?>"></input></td><td><input class="radio" type="radio" name="a_<?= $no ?>" value="<?= $a['id'] ?>"></input></tr>
+                            <?php
+                            $no++;
+                            endforeach; ?>
                         </tbody>
                     </table>
                 </div>
@@ -152,13 +164,13 @@
 
         <script>
             document.addEventListener("DOMContentLoaded", function () {
-                const checkboxes = document.querySelectorAll(".checkbox");
+                const radiobtn = document.querySelectorAll(".radio");
                 const progressBar = document.querySelector(".progress");
                 const progressText = document.getElementById("progress-text");
 
                 function updateProgress() {
-                    const total = checkboxes.length; // 総数
-                    const checked = document.querySelectorAll(".checkbox:checked").length; // チェックされた数
+                    const total = radiobtn.length / 2 ; // 総数
+                    const checked = document.querySelectorAll(".radio:checked").length; // チェックされた数
                     const percentage = ((checked / total) * 100).toFixed(1); // 進捗率
 
                     // 進捗バー更新
@@ -166,8 +178,8 @@
                     progressText.textContent = `${percentage}%`;
 
                 }
-                checkboxes.forEach((checkbox) => {
-                    checkbox.addEventListener("change", updateProgress);
+                radiobtn.forEach((radio) => {
+                    radio.addEventListener("change", updateProgress);
                 });
                     
                 updateProgress();// 初期表示の更新
