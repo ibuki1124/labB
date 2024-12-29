@@ -25,3 +25,51 @@ body{
 .button:hover {
     background-color: #218838;
 }
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+        font-size: 14px;
+    }
+    .container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+    .fsize {
+        font-size: 1em;
+    }
+    input[type="text"], input[type="password"] {
+        width: calc(100% - 20px);
+        margin: 8px 0;
+        padding: 10px;
+        font-size: 0.9em;
+    }
+    button {
+        font-size: 1em;
+        padding: 10px;
+    }
+    .create-links {
+        margin-top: 10px;
+        font-size: 0.9em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+    input[type="text"], input[type="password"] {
+        font-size: 0.8em;
+    }
+    button {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+    .create-links {
+        font-size: 0.8em;
+    }
+  }
