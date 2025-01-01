@@ -39,7 +39,14 @@
                 // チェックした項目を配列に格納
                 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     // チェックされた項目を取得
-                    $checkedItems = $_POST['actions'] ?? []; // チェックされたIDの配列
+                    $checkedItems = []; // チェックされたIDの配列
+                    // ジャンルごとに取得
+                    $foodsChecked = array_filter($_POST['foods'] ?? []);
+                    $thingsChecked = array_filter($_POST['things'] ?? []);
+                    $actsChecked = array_filter($_POST['act'] ?? []);
+                    // すべてのジャンルを1つの配列に統合
+                    $checkedItems = array_merge($foodsChecked, $thingsChecked, $actsChecked);
+
                     $userId = $_SESSION["user_id"]; // ログインユーザーID
                     $date = date('Y-m-d H:i:s'); // 現在の日時
 
@@ -50,8 +57,9 @@
                         // }
                         $checkedItemsJson = json_encode($checkedItems);
 
-                        // var_dump($checkedItems); // 配列の内容を確認
-                        // echo $checkedItemsJson;   // カンマ区切り文字列を確認
+                        //デバッグ用
+                        var_dump($checkedItems); // 配列の内容を確認
+                        echo $checkedItemsJson;   // カンマ区切り文字列を確認
 
                         try {
                             //スコア集計
@@ -105,11 +113,13 @@
                         <!--繰り返しで表作成-->
                             <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox"></input></td></tr>-->
                             <?php
-                            $no = 0;
-                            foreach ($foods as $f):?>
-                                <tr><td><?= $f['action'] ?></td><td><input class="radio" type="radio" name="f_<?= $no ?>" value="<?= $f['id'] ?>"></input></td><td><input class="radio" type="radio" name="f_<?= $no ?>" value="<?= $f['id'] ?>"></input></td></tr>
+                            foreach ($foods as $index => $f):?>
+                                <tr>
+                                    <td><?= $f['action'] ?></td>
+                                    <td><input class="radio" type="radio" name="foods[<?= $index ?>]" value="<?= $f['id'] ?>"></input></td>
+                                    <td><input class="radio" type="radio" name="foods[<?= $index ?>]" value=""></input></td>
+                                </tr>
                             <?php 
-                            $no++;
                             endforeach; ?>
                             </tbody>
                     </table>
@@ -125,11 +135,13 @@
                             <!--繰り返しで表作成-->
                             <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr> -->
                             <?php
-                            $no = 0;
-                            foreach ($things as $t): ?>
-                                <tr><td><?= $t['action'] ?></td><td><input class="radio" type="radio" name="t_<?= $no ?>" value="<?= $t['id'] ?>"></input></td><td><input class="radio" type="radio" name="t_<?= $no ?>" value="<?= $t['id'] ?>"></input></td></tr>
+                            foreach ($things as $index => $t): ?>
+                                <tr>
+                                    <td><?= $t['action'] ?></td>
+                                    <td><input class="radio" type="radio" name="things[<?= $index ?>]" value="<?= $t['id'] ?>"></input></td>
+                                    <td><input class="radio" type="radio" name="things[<?= $index ?>]" value=""></input></td>
+                                </tr>
                             <?php
-                            $no++;
                             endforeach; ?>
                         </tbody>
                     </table>
@@ -145,11 +157,13 @@
                             <!--繰り返しで表作成-->
                             <!-- <tr><td>チェック項目</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr> -->
                             <?php
-                            $no = 0;
-                            foreach ($act as $a): ?>
-                                <tr><td><?= $a['action'] ?></td><td><input class="radio" type="radio" name="a_<?= $no ?>" value="<?= $a['id'] ?>"></input></td><td><input class="radio" type="radio" name="a_<?= $no ?>" value="<?= $a['id'] ?>"></input></tr>
+                            foreach ($act as $index => $a): ?>
+                                <tr>
+                                    <td><?= $a['action'] ?></td>
+                                    <td><input class="radio" type="radio" name="act[<?= $index ?>]" value="<?= $a['id'] ?>"></input></td>
+                                    <td><input class="radio" type="radio" name="act[<?= $index ?>]" value=""></input></td>
+                                </tr>
                             <?php
-                            $no++;
                             endforeach; ?>
                         </tbody>
                     </table>
