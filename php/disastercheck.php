@@ -112,7 +112,7 @@
                     <h1 class="heading-medium">備蓄(食料)</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th rowspan="2">備蓄品</th><th colspan="2" class="small">対策状況</th></tr>
                             <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
@@ -134,7 +134,7 @@
                     <h1 class="heading-medium">備蓄</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th rowspan="2">備蓄品</th><th colspan="2" class="small">対策状況</th></tr>
                             <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
@@ -156,7 +156,7 @@
                     <h1 class="heading-medium">対策行動</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th rowspan="2">項目</th><th colspan="2" class="small">対策状況</th></tr>
                             <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
