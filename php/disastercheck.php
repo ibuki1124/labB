@@ -98,16 +98,20 @@
                     <h1 class="heading-medium">備蓄(食料)</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th rowspan="2">備蓄品</th><th colspan="2" class="small">対策状況</th></tr>
                             <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
                         <!--繰り返しで表作成-->
                             <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox"></input></td></tr>-->
                             <?php
-                            $no = 0;
-                            foreach ($foods as $f):?>
-                                <tr><td><?= $f['action'] ?></td><td><input class="radio" type="radio" name="f_<?= $no ?>" value="<?= $f['id'] ?>"></input></td><td><input class="radio" type="radio" name="f_<?= $no ?>" value="<?= $f['id'] ?>"></input></td></tr>
+
+                            foreach ($foods as $index => $f):?>
+                                <tr>
+                                    <td><?= $f['action'] ?></td>
+                                    <td><input class="radio" type="radio" name="foods[<?= $index ?>]" value="<?= $f['id'] ?>" required></input></td>
+                                    <td><input class="radio" type="radio" name="foods[<?= $index ?>]" value="" required></input></td>
+                                </tr>
                             <?php 
                             $no++;
                             endforeach; ?>
@@ -118,16 +122,20 @@
                     <h1 class="heading-medium">備蓄</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th rowspan="2">備蓄品</th><th colspan="2" class="small">対策状況</th></tr>
                             <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
                             <!--繰り返しで表作成-->
                             <!-- <tr><td>品名</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr> -->
                             <?php
-                            $no = 0;
-                            foreach ($things as $t): ?>
-                                <tr><td><?= $t['action'] ?></td><td><input class="radio" type="radio" name="t_<?= $no ?>" value="<?= $t['id'] ?>"></input></td><td><input class="radio" type="radio" name="t_<?= $no ?>" value="<?= $t['id'] ?>"></input></td></tr>
+
+                            foreach ($things as $index => $t): ?>
+                                <tr>
+                                    <td><?= $t['action'] ?></td>
+                                    <td><input class="radio" type="radio" name="things[<?= $index ?>]" value="<?= $t['id'] ?>" required></input></td>
+                                    <td><input class="radio" type="radio" name="things[<?= $index ?>]" value="" required></input></td>
+                                </tr>
                             <?php
                             $no++;
                             endforeach; ?>
@@ -138,23 +146,27 @@
                     <h1 class="heading-medium">対策行動</h1>
                     <table class="stocktable align-center">
                         <thead>
-                            <tr><th rowspan="2">備蓄品</th><th colspan="2">有無</th></tr>
+                            <tr><th rowspan="2">項目</th><th colspan="2" class="small">対策状況</th></tr>
                             <tr><th>済</th><th>未</th></tr>
                         </thead>
                         <tbody>
                             <!--繰り返しで表作成-->
                             <!-- <tr><td>チェック項目</td><td><input class="checkbox" type="checkbox" name="" value=""></input></td></tr> -->
                             <?php
-                            $no = 0;
-                            foreach ($act as $a): ?>
-                                <tr><td><?= $a['action'] ?></td><td><input class="radio" type="radio" name="a_<?= $no ?>" value="<?= $a['id'] ?>"></input></td><td><input class="radio" type="radio" name="a_<?= $no ?>" value="<?= $a['id'] ?>"></input></tr>
+
+                            foreach ($act as $index => $a): ?>
+                                <tr>
+                                    <td><?= $a['action'] ?></td>
+                                    <td><input class="radio" type="radio" name="act[<?= $index ?>]" value="<?= $a['id'] ?>" required></input></td>
+                                    <td><input class="radio" type="radio" name="act[<?= $index ?>]" value="" required></input></td>
+                                </tr>
                             <?php
                             $no++;
                             endforeach; ?>
                         </tbody>
                     </table>
                 </div>
-                <button class="btn " type="submit" name="">続行</button>
+                <button class="btn" type="submit">結果を見る</button>
             </form>
             </div>
         </main>
