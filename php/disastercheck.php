@@ -122,8 +122,8 @@
                             foreach ($foods as $index => $f):?>
                                 <tr>
                                     <td><?= $f['action'] ?></td>
-                                    <td><input class="radio" type="radio" name="foods[<?= $index ?>]" value="<?= $f['id'] ?>"></input></td>
-                                    <td><input class="radio" type="radio" name="foods[<?= $index ?>]" value=""></input></td>
+                                    <td><input class="radio" type="radio" name="foods[<?= $index ?>]" value="<?= $f['id'] ?>" required></input></td>
+                                    <td><input class="radio" type="radio" name="foods[<?= $index ?>]" value="" required></input></td>
                                 </tr>
                             <?php 
                             endforeach; ?>
@@ -144,8 +144,8 @@
                             foreach ($things as $index => $t): ?>
                                 <tr>
                                     <td><?= $t['action'] ?></td>
-                                    <td><input class="radio" type="radio" name="things[<?= $index ?>]" value="<?= $t['id'] ?>"></input></td>
-                                    <td><input class="radio" type="radio" name="things[<?= $index ?>]" value=""></input></td>
+                                    <td><input class="radio" type="radio" name="things[<?= $index ?>]" value="<?= $t['id'] ?>" required></input></td>
+                                    <td><input class="radio" type="radio" name="things[<?= $index ?>]" value="" required></input></td>
                                 </tr>
                             <?php
                             endforeach; ?>
@@ -166,15 +166,15 @@
                             foreach ($act as $index => $a): ?>
                                 <tr>
                                     <td><?= $a['action'] ?></td>
-                                    <td><input class="radio" type="radio" name="act[<?= $index ?>]" value="<?= $a['id'] ?>"></input></td>
-                                    <td><input class="radio" type="radio" name="act[<?= $index ?>]" value=""></input></td>
+                                    <td><input class="radio" type="radio" name="act[<?= $index ?>]" value="<?= $a['id'] ?>" required></input></td>
+                                    <td><input class="radio" type="radio" name="act[<?= $index ?>]" value="" required></input></td>
                                 </tr>
                             <?php
                             endforeach; ?>
                         </tbody>
                     </table>
                 </div>
-                <button class="btn " type="submit" name="">続行</button>
+                <button class="btn" type="submit">結果を見る</button>
             </form>
             </div>
         </main>
