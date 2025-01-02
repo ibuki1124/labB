@@ -24,12 +24,17 @@ p{
     text-align: right;
 }
 
+.left{
+    text-align: left;
+}
+
+
 
 /*見出し*/
 .page-title,
 .heading-large,
 .heading-medium{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-align: center;
     padding: 20px 5px 0;
 }
@@ -96,8 +101,7 @@ p{
     align-items: center;
 }
 .check-form{
-    padding: 10px 20px 20px;
-    font-size: xx-large;
+    padding: 10px;
 }
 
 /* checkbox radio */
@@ -148,7 +152,7 @@ table.stocktable th:nth-child(3){
     width: 35%;
 }
 table.stocktable th,td {
-    padding: 20px;
+    padding: 10px;
     border: 1px solid green;
 }
 table.stocktable th{
@@ -215,6 +219,10 @@ td.pastr:first-child, th.pastr:first-child {
     color: #fff;
 }
 
+th.small{
+    font-size: 10px;
+}
+
 
 /*デスクトップ*/
 @media(min-width:860px){
@@ -229,6 +237,13 @@ td.pastr:first-child, th.pastr:first-child {
     }
     .heading-large{
         font-size: 4rem;
+    }
+    .check-form{
+        padding: 10px 20px 20px;
+        font-size: xx-large;
+    }
+    table.stocktable th,td {
+        padding: 15px;
     }
     .progress-container {
         position: fixed;
@@ -249,9 +264,6 @@ td.pastr:first-child, th.pastr:first-child {
         margin: 2px; /* ボタン間のスペースを調整 */
         width: 100%;
     }
-    .text{
-        font-size: 5px;
-    }
     table.stocktable {
         table-layout: fixed;
         width: 100%;
@@ -259,5 +271,8 @@ td.pastr:first-child, th.pastr:first-child {
         border-collapse: collapse;
         border: 3px solid green;
         font-size: 1.2rem;
+    }
+    th.small{
+        font-size: 16px;
     }
 }
