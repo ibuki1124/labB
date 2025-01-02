@@ -102,8 +102,9 @@ p{
 
 /* checkbox radio */
 input[type="radio"] {
-    transform: scale(1.5); /* 倍率を指定 (例: 1.5倍) */
-    margin: 5px; /* ボタン間のスペースを調整 */
+    display: inline-block;
+    transform: scale(1); /* 倍率を指定 (例: 1.5倍) */
+    margin: 0px; /* ボタン間のスペースを調整 */
 }
 /* checkbox */
 input[type="checkbox"] {
@@ -133,6 +134,9 @@ table.stocktable {
     /*min-width: 460px;*/
     border-collapse: collapse;
     border: 3px solid green;
+    font-size: 0.8rem;
+    word-break: break-all;
+    word-wrap: break-all;
 }
 table.stocktable th:nth-child(1){
     width: 50%;
@@ -237,5 +241,23 @@ td.pastr:first-child, th.pastr:first-child {
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* checkbox radio */
+    input[type="radio"] {
+        transform: scale(1.5); /* 倍率を指定 (例: 1.5倍) */
+        margin: 2px; /* ボタン間のスペースを調整 */
+        width: 100%;
+    }
+    .text{
+        font-size: 5px;
+    }
+    table.stocktable {
+        table-layout: fixed;
+        width: 100%;
+        /*min-width: 460px;*/
+        border-collapse: collapse;
+        border: 3px solid green;
+        font-size: 1.2rem;
     }
 }
