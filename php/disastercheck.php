@@ -58,8 +58,8 @@
                         $checkedItemsJson = json_encode($checkedItems);
 
                         //デバッグ用
-                        var_dump($checkedItems); // 配列の内容を確認
-                        echo $checkedItemsJson;   // カンマ区切り文字列を確認
+                        // var_dump($checkedItems); // 配列の内容を確認
+                        // echo $checkedItemsJson;   // カンマ区切り文字列を確認
 
                         try {
                             //スコア集計
@@ -84,9 +84,15 @@
                         } catch (PDOException $e) {
                             // echo "エラー: " . $e->getMessage();
                         }
-                    } /*else {
-                        echo "チェックされた項目がありません。";
-                    } */
+                        // result.php にリダイレクト
+                        header("Location: result.php");
+                        exit;
+                    } else {
+                            // echo "チェックされた項目がありません。";
+                            // top.php にリダイレクト
+                            header("Location: top.php");
+                            exit;
+                        }
                 }
 
 
