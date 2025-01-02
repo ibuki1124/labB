@@ -45,6 +45,7 @@ img{
 .nav-links a {
     font-weight:normal;
     color: #F0E2D1;
+    font-size: 75%;
     margin-left: 15px; /* 各リンクの間隔 */
 }
 .nav-links a:hover {
@@ -59,5 +60,8 @@ img{
         justify-content: space-between;
         flex-flow: row;
         padding-top: 1.5rem;
+    }
+    .nav-links a {
+        font-size: 1rem;
     }
 }
