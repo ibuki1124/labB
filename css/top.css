@@ -8,34 +8,6 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #305C70;
-    font-weight:bold;
-    color: #f08402;
-    padding: 10px 20px 10px 0;
-    display: flex;
-    align-items: center;
-}
- img{
-    margin-left:20px;
- }
-.aplication_title{
-    margin-right:0px;
-}
-.nav-links {
-    margin-left: auto; /* 右寄せにする */
-}
-
-.nav-links a {
-    font-weight:normal;
-    color: #F0E2D1;
-    text-decoration: none;
-    margin-left: 15px; /* 各リンクの間隔 */
-}
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
 .container {
     padding: 20px;
 }
