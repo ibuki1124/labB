@@ -54,10 +54,6 @@ p{
     background-color: #218838;
 }
 
-/*ヘッダー*/
-.page-header{
-    padding-top: .1rem;
-}
 .main-nav{
     display: flex;
     justify-content: center;
@@ -80,10 +76,6 @@ p{
     background-color: #8de67a;
 }
 
-.align-center *{
-    margin-right: auto;
-    margin-left: auto;
-}
 .main{
     padding: 10px 20px 20px;
 }
