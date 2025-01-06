@@ -41,29 +41,49 @@
                 <h2 class="page-title">過去の記録</h2>
             </div>
             <div class="main">
-            <?php foreach ($results as $r): ?>
-                <table class="stocktable align-center pastr">
-                <thead>
-                    <tr><th></th><th>日付：<?= $r['date'] ?></th></tr>
-                    <tr><th>対策</th><th>結果</th></tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($actions as $a): ?>
-                        <tr><td><?= $a['action'] ?></td>
-                        <td>
-                            <?php if (in_array($a['id'], json_decode($r['check_index'], true))): ?>〇
-                            <?php else: ?>×
-                            <?php endif; ?>
-                        </td></tr>
-                    <?php endforeach; ?>
-                </tbody>
-                </table>
-            <?php endforeach; ?>
+            <div class="accordion">
+                <?php foreach ($results as $r): 
+                    $check_indexes = json_decode($r['check_index'], true) ?? [];
+                ?>
+                <div class="accordion-item">
+                    <div class="accordion-header" data-target="content<?= $r['date'] ?>"><?= $r['date'] ?><div class="left">スコア: </div></div>
+                    <div class="accordion-content" id="content<?= $r['date'] ?>">
+                        <table class="stocktable align-center pastr">
+                            <thead>
+                                <tr><th>対策</th><th>結果</th></tr>
+                            </thead>
+                            <tbody>
+                                <?php foreach ($actions as $a): ?>
+                                    <tr>
+                                        <td><?= $a['action'] ?></td>
+                                        <td><?= in_array($a['id'], $check_indexes) ? '〇' : '×' ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <?php endforeach; ?>
             </div>
-                <a href="top.php" class="btn"name="">トップ画面に戻る</a>
-                
-                
-            </div>
+        </div>
+        <a href="top.php" class="btn"name="">トップ画面に戻る</a>
         </main>
+        <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const targetId = header.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const isActive = content.classList.contains('active');
+
+                document.querySelectorAll('.accordion-content').forEach(c => c.classList.remove('active'));
+                document.querySelectorAll('.accordion-header').forEach(h => h.classList.remove('active'));
+
+                if (!isActive) {
+                    content.classList.add('active');
+                    header.classList.add('active');
+                }
+            });
+        });
+    </script>
     </body>
 </html>
