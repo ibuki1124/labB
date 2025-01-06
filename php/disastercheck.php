@@ -6,6 +6,7 @@
         <title>対策チェック-災害対策アプリ</title>
         <meta name="description" content="防災アプリ">
         <meta name="viewport" content="width=device-width, initial-sccale=1">
+        <link rel="icon" type="image/png" href="../img/アンケートシートのフリー素材.png" >
         <!--リセットCSS-->
             <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
         <!--オリジナルCSS-->
