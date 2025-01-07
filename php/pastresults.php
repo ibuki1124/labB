@@ -46,7 +46,7 @@
                     $check_indexes = json_decode($r['check_index'], true) ?? [];
                 ?>
                 <div class="accordion-item">
-                    <div class="accordion-header" data-target="content<?= $r['date'] ?>"><?= $r['date'] ?><div class="left">スコア: <?= $r['score'] ?></div></div>
+                    <div class="accordion-header" data-target="content<?= $r['date'] ?>"><?= $r['date'] ?><div class="left">スコア: <?= $r['score'] ?> / 162</div></div>
                     <div class="accordion-content" id="content<?= $r['date'] ?>">
                         <table class="stocktable align-center pastr">
                             <thead>
