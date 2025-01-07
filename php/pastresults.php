@@ -24,7 +24,7 @@
             $user_id = $_SESSION["user_id"];
 
             include("temp/db.php");
-            $sql = "SELECT date, check_index, user_id FROM past_scores WHERE user_id = :user_id ORDER BY date DESC;";
+            $sql = "SELECT score, date, check_index, user_id FROM past_scores WHERE user_id = :user_id ORDER BY date DESC;";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
             $stmt->execute();
@@ -46,7 +46,7 @@
                     $check_indexes = json_decode($r['check_index'], true) ?? [];
                 ?>
                 <div class="accordion-item">
-                    <div class="accordion-header" data-target="content<?= $r['date'] ?>"><?= $r['date'] ?><div class="left">スコア: </div></div>
+                    <div class="accordion-header" data-target="content<?= $r['date'] ?>"><?= $r['date'] ?><div class="left">スコア: <?= $r['score'] ?></div></div>
                     <div class="accordion-content" id="content<?= $r['date'] ?>">
                         <table class="stocktable align-center pastr">
                             <thead>

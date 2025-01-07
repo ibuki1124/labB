@@ -40,7 +40,7 @@
                     <p class="">日付：<?= $latest_result['date']; ?></p>
                 </div>
                 <div class="main-topc align-center">
-                    <h1>スコア：<?= $latest_result['score']; ?></h1>
+                    <h1>スコア：<?= $latest_result['score']; ?> / 162</h1>
                 </div>
                 <table class="stocktable align-center">
                     <thead>
