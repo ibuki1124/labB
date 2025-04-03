@@ -5,5 +5,7 @@ TRUNCATE TABLE users;
 TRUNCATE TABLE past_scores;
 TRUNCATE TABLE genres;
 TRUNCATE TABLE action_lists;
+TRUNCATE TABLE measure_lists;
+TRUNCATE TABLE m_genres;
 -- 外部キー制約を有効化
 SET FOREIGN_KEY_CHECKS = 1;

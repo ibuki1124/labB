@@ -262,6 +262,26 @@ th.small{
     padding: 0px;
 }
 
+.measure-list {
+    display: none;
+    margin-left: 20px;
+}
+.measure-list.first {
+    display: block; /* 一番上のリストだけ開く */
+}
+.genre-title {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 中央揃え */
+    gap: 10px; /* アイコンとテキストの間隔を調整 */
+    width: 100%; /* 幅を全体にする */
+    text-align: center; /* テキスト自体も中央揃え */
+}
+.toggle-icon {
+    font-weight: bold;
+    margin-right: 10px;
+}
 /*デスクトップ*/
 @media(min-width:860px){
     /*見出し*/

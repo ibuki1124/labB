@@ -35,6 +35,7 @@ CREATE TABLE `action_lists` (
     `genre_id` INT NOT NULL, -- 外部キー
     FOREIGN KEY (`genre_id`) REFERENCES `genres`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 -- action_listsテーブルにはユーザ側の操作によるデータ挿入がないためここで挿入しておく（後から変更可能）
 -- INSERT INTO action_lists (action, score, genre_id) VALUES
 -- ('飲料水（一人一日3リットル目安、三日分）', 4, 1),
@@ -68,3 +69,45 @@ CREATE TABLE `action_lists` (
 -- ('近所と協力できる関係性がある。', 10, 3),
 -- ('住宅用警報器が設置されている。', 10, 3)
 -- ;
+
+-- m_genresテーブルを作成
+CREATE TABLE `m_genres` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `genre` VARCHAR(50) NOT NULL -- チェック項目のジャンル
+);
+-- m_genresテーブルにはユーザ側の操作によるデータ挿入がないためここで挿入しておく（後から変更可能）
+INSERT INTO `m_genres` (genre) VALUES
+    ("地震・津波"),
+    ("異常気象・水害"),
+    ("雪氷・噴火")
+;
+
+-- measure_listsテーブルを作成
+CREATE TABLE `measure_lists` (
+    `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `measure` TEXT NOT NULL, -- 行動の内容
+    `genre_id` INT NOT NULL, -- 外部キー
+    FOREIGN KEY (`genre_id`) REFERENCES `m_genres`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- measure_listsテーブルにはユーザ側の操作によるデータ挿入がないためここで挿入しておく（後から変更可能）
+-- INSERT INTO measure_lists (measure, genre_id) VALUES
+-- ('火災の発生に備えて消火器の準備や風呂の水のくみ置きをしておく。 ', 1),
+-- ('海辺から離れ、より高い安全な場所へ避難する', 1),
+-- ('鉢植えや物干しざおなど、飛ばされそうな物は屋内へ移動させるか固定する', 2),
+-- ('キッチンや浴室、洗濯機は排水溝に、トイレは便器の中に土のうを置いて汚水の逆流を防ぐ ', 2),
+-- ('側溝や排水溝は掃除し、水の流れをスムーズにしておく', 2),
+-- ('動きやすい格好で、持ち出し品を必要最小限とし、なるべく2人以上で避難する。', 2),
+-- ('地上の冠水によって地下に水が流れ込み、避難が難しくなる場合があるため、地下からは早めに避難する。 ', 2),
+-- ('河川・用水路の近くやアンダーパスは、危険なため近づかない。 ', 2),
+-- ('やむを得ず冠水箇所を移動する場合は、傘や杖など長い棒で地面を探りながら移動する ', 2),
+-- ('車を高台に移動させておく', 2),
+-- ('屋根や軒先に雪止め', 3),
+-- ('水道管、夜間は少量の水を流す', 3),
+-- ('歩くときは小幅で、膝を少し曲げて重心を低くする', 3),
+-- ('水道管が凍結したときは、ゆっくりと解凍する', 3),
+-- ('雪下ろしの判断は、深さだけでなく重さでも判断する', 3),
+-- ('黒く光っている路面は滑りやすく、白く見える路面は雪が圧縮され、滑りやすい', 3),
+-- ('防塵ゴーグルやマスクで火山灰対策 ', 3)
+-- ;
+

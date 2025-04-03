@@ -19,7 +19,7 @@
 
     <div class="container">
         <a href="disastercheck.php" class="button">対策チェックへ</a>
-        <!-- <a href="#actions" class="button">災害時の行動(リスト、災害別)へ</a> -->
+        <a href="measure_list.php" class="button">災害時の対策ポイントへ</a>
     </div>
 </body>
 </html>
